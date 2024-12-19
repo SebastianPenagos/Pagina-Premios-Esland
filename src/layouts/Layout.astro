@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro';
+import Intro from '../components/Intro.astro';
 
 interface Props {
 	description: string;
@@ -22,14 +23,29 @@ const {description, title} = Astro.props;
 	</body>
 </html>
 
-<style> 
+<style is:global> 
 
 :root{
 	color-scheme: dark;
 }
 
 html{
-		background-color: black;
+		background-color: rgb(13, 19, 51);
+		font-family:  'Onest Variable', sans-serif;
 	}
 	
+	p{
+		color: rgba(255, 255, 255, 0.9);
+		line-height: 1.4;
+		margin-bottom: 1em;
+		font-weight: -100;
+		font-size: 1em;
+		letter-spacing: .5x;
+	}
+	
+	p strong{
+		color: white;
+		font-weight: 700;
+	}
+
 </style>
