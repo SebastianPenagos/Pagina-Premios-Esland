@@ -3,9 +3,10 @@ interface Props {
   class?: string;
   title: string;
   subtitle?: string;
+  botton: string;
 }
 
-const { title, subtitle } = Astro.props;
+const { title, subtitle, botton } = Astro.props;
 ---
 
 <article
@@ -21,13 +22,12 @@ const { title, subtitle } = Astro.props;
 >
   <div
     class="absolute z-10 bottom-0 top-0 w-full h-full
-    bg-gradient-to-b from-transparent via-black/20 to to-black/80"
+    bg-gradient-to-t from-transparent via-black/80 to to-black/80"
   >
   </div>
   <slot name="image" />
-
   <div
-    class="relative select-none flex flex-col gap-1 p-6 text-lg z-20 justify-end h-full"
+    class="relative select-none flex flex-col gap-1 p-6 text-lg z-20 justify-start h-full"
   >
     <h2 class="text-3xl font-semibold text-balance text-white mb-4">{title}</h2>
     {
@@ -39,5 +39,13 @@ const { title, subtitle } = Astro.props;
     }
 
     <slot name="content" />
+    
+      <ul>
+        <li>{botton}</li>
+        <li>a</li>
+        <li><div class=""></div></li>
+      </ul>
+      <slot name="on"/>
+    
   </div>
 </article>
